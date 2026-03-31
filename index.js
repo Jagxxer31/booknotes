@@ -57,6 +57,7 @@ app.post("/edited", async(req,res) =>{
   let author=req.body["author"];
   db.query("insert into books(title,imgcode,rating,note,author) values($1,$2,$3,$4,$5)",
     [title,imgcode,rating,note,author]);
+  console.log([title,imgcode,rating,note,author])
   res.redirect("/")
 });
 
